@@ -20,7 +20,7 @@ const Login = () => {
   };
   const sendRequest = async () => {
     const res = await axios
-      .post("https://backend-insta-business.herokuapp.com/api/login", {
+      .post("http://localhost:3000/api/login", {
         email: inputs.email,
         password: inputs.password,
       })

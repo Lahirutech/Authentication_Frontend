@@ -9,7 +9,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const sendLogoutReq = async () => {
-    const res = await axios.post("https://backend-insta-business.herokuapp.com/api/logout", null, {
+    const res = await axios.post("http://localhost:3000/api/logout", null, {
       withCredentials: true,
     });
     if (res.status == 200) {
