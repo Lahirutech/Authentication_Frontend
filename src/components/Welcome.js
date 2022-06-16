@@ -7,7 +7,7 @@ const Welcome = () => {
 
   const refreshToken = async () => {
     const res = await axios
-      .get("http://localhost:3000/api/refresh", {
+      .get("/api/refresh", {
         withCredentials: true,
       })
       .catch((err) => console.log(err));
@@ -17,7 +17,7 @@ const Welcome = () => {
   };
   const sednRequest = async () => {
     const res = await axios
-      .get("http://localhost:3000/api/user", {
+      .get("/api/user", {
         withCredentials: true,
       })
       .catch((err) => console.log(err));

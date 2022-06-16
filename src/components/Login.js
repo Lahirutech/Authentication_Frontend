@@ -20,7 +20,7 @@ const Login = () => {
   };
   const sendRequest = async () => {
     const res = await axios
-      .post("http://localhost:3000/api/login", {
+      .post("/api/login", {
         email: inputs.email,
         password: inputs.password,
       })
