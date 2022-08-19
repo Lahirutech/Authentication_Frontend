@@ -24,9 +24,9 @@ const Welcome = () => {
     const data = await res.data;
     return data;
   };
+
   useEffect(() => {
-    if (firstRender) {
-      firstRender = false;
+    if (true) {
       sednRequest().then((data) => setUser(data.user));
     }
     let interval = setInterval(() => {
