@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { authActions } from "../store";
+import { authActions } from "../redux/authSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
