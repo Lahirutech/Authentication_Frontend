@@ -3,12 +3,12 @@ import { AppBar, Box, Tab, Tabs, Toolbar, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { authActions } from "../store";
+import { authActions } from "../redux/authSlice";
 axios.defaults.withCredentials = true;
 const Header = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
   const sendLogoutReq = async () => {
     const res = await axios.post("/api/logout", null, {
       withCredentials: true,
