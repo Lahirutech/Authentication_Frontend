@@ -22,10 +22,11 @@ const Login = () => {
     const res = await axios
       .post("/api/login", {
         email: inputs.email,
-        password: inputs.password,
+        password: inputs.password, 
       })
       .catch((err) => console.log(err));
     const data = await res.data;
+    console.log("data after logged in", data);
     return data;
   };
   const handleSubmit = (e) => {

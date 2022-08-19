@@ -8,6 +8,7 @@ axios.defaults.withCredentials = true;
 const Header = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  
   const sendLogoutReq = async () => {
     const res = await axios.post("/api/logout", null, {
       withCredentials: true,
