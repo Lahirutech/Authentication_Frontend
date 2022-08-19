@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store";
 axios.defaults.withCredentials = true;
-let firstRender = true;
+
 const Welcome = () => {
   const [user, setUser] = useState();
+  const dispatch = useDispatch();
 
   const refreshToken = async () => {
     const res = await axios
@@ -26,9 +29,12 @@ const Welcome = () => {
   };
 
   useEffect(() => {
-    if (true) {
-      sednRequest().then((data) => setUser(data.user));
-    }
+    console.log("reloaded");
+    sednRequest().then((data) => {
+      setUser(data.user);
+      dispatch(authActions.login());
+    });
+
     let interval = setInterval(() => {
       refreshToken().then((data) => setUser(data.user));
     }, 1000 * 29);
